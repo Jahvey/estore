@@ -1,0 +1,23 @@
+{
+    "name" : "jack",
+    "age"  : 20,
+    "height" : 1.85,
+    "school" : {
+        "name" : "HM",
+        "address" : "中关村软件园"
+    },
+    "photos" : [
+        {
+            "icon" : "beauty.png",
+            "time" : "2014-01-01"
+        },
+        {
+            "icon" : "nice.png",
+            "time" : "2014-02-07"
+        },
+        {
+            "icon" : "good.png",
+            "time" : "2014-05-06"
+        }
+    ]
+}

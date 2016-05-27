@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.multipart.maxSize" value="9999999999999"/>
+	
+    <package name="default" namespace="/" extends="struts-default">
+    	<interceptors>  
+            <interceptor name="authority"  
+                class="cn.itcast.video.interceptor.RequestInterceptor">  
+            </interceptor>  
+            <!-- 拦截器栈 -->  
+            <interceptor-stack name="myStack">  
+                <interceptor-ref name="defaultStack" />  
+                <interceptor-ref name="authority" />  
+            </interceptor-stack>  
+        </interceptors>  
+        
+    	<default-interceptor-ref name="myStack"/>
+        
+        <action name="login" class="cn.itcast.video.aciton.LoginAction" method="login"/>
+        <action name="video" class="cn.itcast.video.aciton.VideoAction" method="video"/>
+        <action name="upload" class="cn.itcast.video.aciton.UploadAction" method="upload"/>
+        <action name="order" class="cn.itcast.video.aciton.OrderAction" method="order"/>
+        <action name="weather" class="cn.itcast.video.aciton.WeatherAction" method="weather"/>
+        
+    </package>
+</struts>

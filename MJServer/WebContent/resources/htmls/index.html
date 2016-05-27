@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>首页</title>
+<script>
+	function loginFormsubmit() {
+		var form = document.getElementById("loginForm");
+		if ("get" == document.getElementById("loginMethod").value) {
+			form.setAttribute("method", "get");
+		}
+		form.submit();
+	}
+	
+	function videoFormsubmit() {
+		var form = document.getElementById("videoForm");
+		if ("get" == document.getElementById("videoMethod").value) {
+			form.setAttribute("method", "get");
+		}
+		form.submit();
+	}
+</script>
+</head>
+<body>
+<br>-------------登录-------------<br>
+<form action="login" method="post" id="loginForm">
+用户名<input name="username"><br>
+密码<input name="pwd"><br>
+请求方式<select id="loginMethod" name="method">
+  <option value =get>GET</option>
+  <option value ="post">POST</option>
+</select><br>
+返回数据格式<select name="type">
+  <option value ="JSON">JSON</option>
+  <option value ="XML">XML</option>
+</select><br>
+<input type="button" value="登录" onclick="loginFormsubmit();">
+</form>
+
+<br><p>-------------获得视频信息-------------<br>
+<form action="video" method="post" id="videoForm">
+请求方式<select id="videoMethod" name="method">
+  <option value =get>GET</option>
+  <option value ="post">POST</option>
+</select><br>
+返回数据格式<select name="type">
+  <option value ="JSON">JSON</option>
+  <option value ="XML">XML</option>
+</select><br>
+<input type="button" value="获得视频信息" onclick="videoFormsubmit();">
+</form>
+
+<br><p>-------------文件上传-------------<br>
+<form action="upload" method="post" enctype="multipart/form-data">
+<input type="file" name="file"><br>
+用户名<input name="username"><br>
+<input type="submit" value="上传">
+</form>
+
+<br><p>-------------多选-------------<br>
+<form>
+<input type="checkbox" name="hoby" value="movie"> 电影 <br>
+<input type="checkbox" name="hoby" value="basketball"> 篮球 <br>
+<input type="checkbox" name="hoby" value="football"> 足球 <br>
+</form>
+</body>
+</html>
